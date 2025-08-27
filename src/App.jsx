@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import BackToTop from './components/BackToTop';
 
 import Home from './pages/Home';
 import About from './pages/About';
@@ -31,6 +32,7 @@ function App() {
           </Routes>
         </main>
         <Footer />
+        <BackToTop />
       </div>
     </Router>
   )
