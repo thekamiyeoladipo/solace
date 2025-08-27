@@ -1,33 +1,96 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import logo from '../assets/solace logo.svg' // Adjust the path as necessary
+import { NavLink } from 'react-router-dom'
+import logo from '../assets/solace logo.svg'
+import { useState } from 'react'
+import { X, Menu } from 'lucide-react'
 
 const Navbar = () => {
+
+const [menuOpen, setMenuOpen] = useState(false);
+
+  const navLinks = [
+    { name: "Home", path: "/" },
+    { name: "About", path: "/about" },
+    { name: "Career", path: "/career" },
+    { name: "Testimonials", path: "/testimonials" },
+    { name: "Blog", path: "/blog" },
+  ];
+
   return (
-    <nav className="bg-[#E0EFFF] h-[100px] flex items-center sticky top-0 z-50 border-b border-dark">
+     <nav className="bg-[#E0EFFF] h-[100px] flex items-center sticky top-0 z-50 border-b border-dark">
       <div className="container mx-auto flex justify-between items-center w-full px-8">
         
         {/* Logo */}
         <div className="flex-shrink-0">
-          <img src={logo} alt="Solace Logo" className="h-auto w-auto" />
+          <img src={logo} alt="Solace Logo" className="h-auto w-auto max-h-[60px]" />
         </div>
 
-        {/* Links */}
-        <ul className="flex space-x-12 text-lg font-normal">
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/about">About</Link></li>
-          <li><Link to="/career">Career</Link></li>
-          <li><Link to="/testimonials">Testimonials</Link></li>
-          <li><Link to="/blog">Blog</Link></li>
+        {/* Desktop Links */}
+        <ul className="hidden md:flex space-x-12 text-lg font-normal">
+          {navLinks.map((link) => (
+            <li key={link.name}>
+              <NavLink
+                to={link.path}
+                className={({ isActive }) =>
+                  `hover:text-green transition ${
+                    isActive ? "text-green font-semibold" : "text-dark"
+                  }`
+                }
+              >
+                {link.name}
+              </NavLink>
+            </li>
+          ))}
         </ul>
 
-        {/* Button */}
-        <div>
+        {/* Desktop Button */}
+        <div className="hidden md:block">
           <button className="bg-faintgray text-dark px-6 py-3 rounded-lg">
             Get a Quote
           </button>
         </div>
+
+        {/* Mobile Menu Button */}
+        <button
+          className="md:hidden text-dark"
+          onClick={() => setMenuOpen(true)}
+        >
+          <Menu size={32} />
+        </button>
       </div>
+
+      {/* Mobile Fullscreen Menu */}
+      {menuOpen && (
+        <div className="fixed inset-0 bg-[#E0EFFF] z-50 flex flex-col items-center justify-center space-y-8 text-2xl font-medium animate-slideDown">
+          {/* Close Button */}
+          <button
+            className="absolute top-6 right-6 text-dark"
+            onClick={() => setMenuOpen(false)}
+          >
+            <X size={36} />
+          </button>
+
+          {/* Mobile Links */}
+          {navLinks.map((link) => (
+            <NavLink
+              key={link.name}
+              to={link.path}
+              onClick={() => setMenuOpen(false)} // close after clicking
+              className={({ isActive }) =>
+                `hover:text-blue-600 transition ${
+                  isActive ? "text-blue-700 font-bold underline" : "text-dark"
+                }`
+              }
+            >
+              {link.name}
+            </NavLink>
+          ))}
+
+          {/* Mobile Button */}
+          <button className="bg-faintgray text-dark px-6 py-3 rounded-lg">
+            Get a Quote
+          </button>
+        </div>
+      )}
     </nav>
   )
 }

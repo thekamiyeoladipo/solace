@@ -16,3 +16,18 @@ body {
     --color-lightblue: #9FC9BA;
     --color-faintgray: #D9D9D9;
 }
+
+@layer utilities {
+  @keyframes slideDown {
+    from {
+      transform: translateY(-100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  .animate-slideDown {
+    animation: slideDown 0.3s ease-out forwards;
+  }
+}
