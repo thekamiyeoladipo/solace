@@ -5,7 +5,7 @@ import logo from "../assets/solace logo.svg";
 
 export default function Footer() {
   return (
-    <footer className="bg-white border-t border-gray-200 mt-16 hidden">
+    <footer className="bg-white border-t border-gray-200 mt-16">
       <div className="container mx-auto px-8 py-16 grid grid-cols-1 md:grid-cols-4 gap-12">
         
         {/* Column 1: Logo, Address, Socials */}
@@ -72,7 +72,7 @@ export default function Footer() {
       {/* Bottom bar */}
       <div className="bg-black py-4">
         <p className="text-center text-white text-sm">
-          Copyright © {new Date().getFullYear()} Solace WP. All rights reserved
+          Copyright © {new Date().getFullYear()}.All rights reserved.
         </p>
       </div>
     </footer>
