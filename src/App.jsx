@@ -1,20 +1,38 @@
 import { useState } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+
+import Home from './pages/Home';
+import About from './pages/About';
+import Career from './pages/Career';
+import Testimonials from './pages/Testimonials';
+import Blog from './pages/Blog';
+import Contact from './pages/Contact';
+
+
+
 
 function App() {
   
   return (
-    <>
-      <div className='flex justify-center items-center flex-col'>
-        <h1 className='underline'>KAMIYE IS HERE</h1>
-        <p className='font-bold text-red-800'>Tailwindcss works just fine</p>
-        <h1 className='font-bold text-5xl underline tracking-wide'>
-          This is the solace app!
-        </h1>
+    <Router>
+      <div className="flex flex-col min-h-screen">
+        <Navbar />
+        <main className="flex-grow">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/career" element={<Career />} />
+            <Route path="/testimonials" element={<Testimonials />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </main>
+        <Footer />
       </div>
-     
-    </>
+    </Router>
   )
   
 }
