@@ -60,7 +60,7 @@ const handleClose = () => {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-dark"
+          className="md:hidden text-dark cursor-pointer"
           onClick={() => setMenuOpen(true)}
         >
           <Menu size={32} />
@@ -76,7 +76,7 @@ const handleClose = () => {
   >
     {/* Close Button */}
     <button
-      className="absolute top-6 right-6 text-dark"
+      className="absolute top-6 right-6 text-dark cursor-pointer"
       onClick={handleClose}
     >
       <X size={36} />
