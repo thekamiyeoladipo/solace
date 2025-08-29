@@ -9,7 +9,7 @@ const Hero = () => {
           {/* Left column */}
           <div className="flex flex-col justify-center items-center text-center md:items-start md:text-left">
             {/* Eyebrow */}
-            <p className="text-[#FF8A00] font-semibold tracking-wide mb-8">
+            <p className="text-lightorange font-semibold tracking-wide mb-8">
               Transforming ideas into reality
             </p>
 
