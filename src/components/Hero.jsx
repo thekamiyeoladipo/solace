@@ -15,7 +15,7 @@ const Hero = () => {
 
             {/* Headline */}
             <h1 className="text-4xl md:text-6xl font-extrabold leading-[1.1] text-dark max-w-xl">
-              Transform Your Online Presence
+              Transform <br /> Your Online Presence
             </h1>
 
             {/* Subtext */}
