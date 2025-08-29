@@ -53,7 +53,7 @@ const handleClose = () => {
 
         {/* Desktop Button */}
         <div className="hidden md:block">
-          <button className="bg-faintgray text-dark px-6 py-3 rounded-lg">
+          <button className="bg-faintgray text-dark px-6 py-3 rounded-lg cursor-pointer hover:bg-green transition">
             Get a Quote
           </button>
         </div>
