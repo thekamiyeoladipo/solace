@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import heroImg from "../assets/hero.svg"; 
+import heroImg from "../assets/hero.svg";
 
 const Hero = () => {
   return (
@@ -36,25 +36,32 @@ const Hero = () => {
 
             {/* Bottom labels */}
             <div className="mt-16 flex flex-col items-center gap-8 md:flex-row md:justify-start md:gap-16">
-  {/* Clients */}
-  <div className="flex flex-col items-center md:items-start text-center md:text-left">
-    <span className="text-3xl font-extrabold text-dark">4,652</span>
-    <span className="text-base text-dark/80">Clients</span>
-  </div>
+              {/* Clients */}
+              <div className="flex flex-col items-center md:items-start text-center md:text-left">
+                <span className="text-3xl font-extrabold text-dark">4,652</span>
+                <span className="text-base text-dark/80">Clients</span>
+              </div>
 
-  {/* Completed Projects */}
-  <div className="flex flex-col items-center md:items-start text-center md:text-left">
-    <span className="text-3xl font-extrabold text-dark">27,564</span>
-    <span className="text-base text-dark/80">Completed Projects</span>
-  </div>
+              {/* Completed Projects */}
+              <div className="flex flex-col items-center md:items-start text-center md:text-left">
+                <span className="text-3xl font-extrabold text-dark">
+                  27,564
+                </span>
+                <span className="text-base text-dark/80">
+                  Completed Projects
+                </span>
+              </div>
 
-  {/* Journey Experiences */}
-  <div className="flex flex-col items-center md:items-start text-center md:text-left">
-    <span className="text-3xl font-extrabold text-dark">30 yrs</span>
-    <span className="text-base text-dark/80">Journey Experiences</span>
-  </div>
-</div>
-
+              {/* Journey Experiences */}
+              <div className="flex flex-col items-center md:items-start text-center md:text-left">
+                <span className="text-3xl font-extrabold text-dark">
+                  30 yrs
+                </span>
+                <span className="text-base text-dark/80">
+                  Journey Experiences
+                </span>
+              </div>
+            </div>
           </div>
 
           {/* Right column */}
@@ -70,7 +77,7 @@ const Hero = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;
