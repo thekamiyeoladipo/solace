@@ -1,26 +1,28 @@
 // src/components/SectionTitle.jsx
 import React from "react";
 
-const SectionTitle = ({ eyebrow, heading, paragraph }) => {
+const SectionTitle = ({ eyebrow, heading, paragraph, eyebrowColor="text-lightorange", titleColor="text-dark", paraColor="text-dark/70" }) => {
   return (
-    <div className="text-center max-w-2xl mx-auto mb-16">
+    <div className="text-center max-w-2xl mx-auto">
       {/* Eyebrow */}
       {eyebrow && (
-        <p className="text-lightorange font-semibold tracking-wide mb-4">
+        <p className={`font-semibold tracking-wide mb-4 ${eyebrowColor}`}>
           {eyebrow}
         </p>
       )}
 
       {/* Heading */}
       {heading && (
-        <h2 className="text-3xl md:text-4xl font-extrabold text-dark mb-4">
+        <h2 className={`text-3xl md:text-4xl font-extrabold mb-4 ${titleColor}`}>
           {heading}
         </h2>
       )}
 
       {/* Paragraph */}
       {paragraph && (
-        <p className="text-lg text-dark/70">{paragraph}</p>
+        <p className={`text-sm md:text-base leading-relaxed ${paraColor}`}>
+          {paragraph}
+          </p>
       )}
     </div>
   );

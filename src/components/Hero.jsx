@@ -5,7 +5,7 @@ const Hero = () => {
   return (
     <section className="bg-white">
       <div className="container mx-auto px-8">
-        <div className="grid min-h-[calc(100vh-100px)] grid-cols-1 items-center gap-y-12 gap-x-16 md:grid-cols-2 py-10">
+        <div className="grid min-h-[calc(100vh-100px)] grid-cols-1 items-center gap-y-8 gap-x-8 md:grid-cols-2 py-10">
           {/* Left column */}
           <div className="flex flex-col justify-center items-center text-center md:items-start md:text-left">
             {/* Eyebrow */}

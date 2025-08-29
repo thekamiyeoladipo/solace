@@ -46,7 +46,7 @@ const ITEMS = [
 
 export default function CategoriesGrid() {
   return (
-    <section className="py-16">
+    <section className="py-18">
       <div className="container mx-auto px-8">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {ITEMS.map((item) => (
