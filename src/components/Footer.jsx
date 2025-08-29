@@ -5,7 +5,7 @@ import logo from "../assets/solace logo.svg";
 
 export default function Footer() {
   return (
-    <footer className="bg-white border-t border-gray-200 mt-16">
+    <footer className="bg-white mt-16">
       <div className="container mx-auto px-8 py-16 grid grid-cols-1 md:grid-cols-4 gap-12">
         
         {/* Column 1: Logo, Address, Socials */}

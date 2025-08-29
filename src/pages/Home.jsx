@@ -3,8 +3,9 @@ import LogoMarquee from "../components/LogoMarquee";
 import WhyChoosUs from "../components/WhyChoosUs";
 import SectionTitle from "../components/SectionTitle";
 import CategoriesGrid from "../components/CategoriesGrid";
-import why from "../assets/whychooseus.svg"
-import whyy from "../assets/whychooseus.png"
+import why from "../assets/whychooseus.svg";
+import whyy from "../assets/whychooseus.png";
+import cta from "../assets/cta-bg.png";
 
 const TESTIMONIALS = [
   {
@@ -71,6 +72,29 @@ who’ve seen their ideas come to life with Solace."
 
         </div>
        </div>
+      </section>
+      <section id="cta"
+      className="relative bg-cover bg-center text-center py-24 px-6"
+      style={{ backgroundImage: `url(${cta})`}}>
+
+         <div className="absolute inset-0 bg-black/60"></div>
+
+        <div className="relative max-w-2xl mx-auto text-white">
+        <SectionTitle
+          eyebrow="Let's show your business"
+          heading="Turn imagination into reality"
+          paragraph="Unlock Solace’s advanced features and take your 
+WordPress site to the next level."
+          eyebrowColor="text-lightorange"
+          titleColor="text-white"
+          paraColor="text-white"
+        />
+
+        <button className="mt-12 px-6 py-3 bg-green text-white font-semibold rounded-lg shadow-md hover:bg-green-600 transition">
+          Get Started
+        </button>
+      </div>
+
       </section>
     </>
   );
