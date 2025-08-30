@@ -6,6 +6,7 @@ import CategoriesGrid from "../components/CategoriesGrid";
 import why from "../assets/whychooseus.svg";
 import whyy from "../assets/whychooseus.png";
 import cta from "../assets/cta-bg.png";
+import Faq from "../components/Faq"
 
 const TESTIMONIALS = [
   {
@@ -73,6 +74,8 @@ who’ve seen their ideas come to life with Solace."
         </div>
        </div>
       </section>
+      <Faq />
+      {/* CTA section */}
       <section id="cta"
       className="relative bg-cover bg-center text-center py-24 px-6"
       style={{ backgroundImage: `url(${cta})`}}>
@@ -96,6 +99,7 @@ WordPress site to the next level."
       </div>
 
       </section>
+
     </>
   );
 }
