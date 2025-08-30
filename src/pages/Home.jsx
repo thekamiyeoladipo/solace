@@ -94,7 +94,7 @@ WordPress site to the next level."
         />
 
         <button className="mt-12 px-6 py-3 bg-green text-white font-semibold rounded-lg shadow-md hover:bg-green-600 transition">
-          Get Started
+          Get a Quote
         </button>
       </div>
 

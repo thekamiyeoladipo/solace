@@ -69,7 +69,7 @@ export default function FAQSection() {
             >
               {faq.question}
               {openIndex === index ? (
-                <Minus className="w-5 h-5 text-gray-600" />
+                <Minus className="w-6 h-6 text-gray-600" />
               ) : (
                 <Plus className="w-5 h-5 text-gray-600" />
               )}
