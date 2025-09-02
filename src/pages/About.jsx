@@ -1,9 +1,9 @@
-import BreadCrumb from "../components/BreadCrumb"
-import HeroImg from "../assets/aboutheroimage.svg"
-import man from "../assets/man.png"
-import WhyChoosUs from "../components/WhyChoosUs"
-import SectionTitle from "../components/SectionTitle"
-
+import BreadCrumb from "../components/BreadCrumb";
+import HeroImg from "../assets/aboutheroimage.svg";
+import man from "../assets/man.png";
+import WhyChoosUs from "../components/WhyChoosUs";
+import SectionTitle from "../components/SectionTitle";
+import CardSection from "../components/CardSection";
 
 const About = () => {
   return (
@@ -137,8 +137,14 @@ const About = () => {
         paragraph="Whether you seek inspiration for your own projects or simply appreciate the art of 3D 
 printing, this showcase is a window into the world of Printifix’s latest achievements."
       />
+     <CardSection />
+
+
+
+
+
     </>
   );
-}
+};
 
-export default About
+export default About;

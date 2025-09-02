@@ -7,11 +7,7 @@ import why from "../assets/whychooseus.svg";
 import whyy from "../assets/whychooseus.png";
 import cta from "../assets/cta-bg.png";
 import Faq from "../components/Faq"
-import redirectIcon from "../assets/icons/redirect-icon.svg"
-import blogTemplate from "../assets/blog-template.svg"
-import cofeeTemplate from "../assets/cofee-template.svg"
-import ecommerceTemplate from "../assets/ecommerce-template.svg"
-import portfolioTemplate from "../assets/portfolio-template.svg"
+
 
 const TESTIMONIALS = [
   {
