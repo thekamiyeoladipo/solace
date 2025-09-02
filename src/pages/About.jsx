@@ -85,8 +85,7 @@ const About = () => {
           <div>
             <p className="text-green font-light mb-3">Our Story</p>
             <h2 className="text-3xl md:text-5xl font-extrabold leading-tight mb-6">
-              Shaping the future of WP 
-              Theme business service
+              Shaping the future of WP Theme business service
             </h2>
           </div>
           <div>
@@ -132,10 +131,12 @@ const About = () => {
       </section>
 
       <WhyChoosUs />
-      <SectionTitle 
-      eyebrowColor="text-lightorange"/>
-
-
+      <SectionTitle
+        eyebrow="Our latest work"
+        heading="Discover our recent Theme"
+        paragraph="Whether you seek inspiration for your own projects or simply appreciate the art of 3D 
+printing, this showcase is a window into the world of Printifix’s latest achievements."
+      />
     </>
   );
 }
