@@ -22,6 +22,7 @@ const handleClose = () => {
     { name: "Career", path: "/career" },
     { name: "Testimonials", path: "/testimonials" },
     { name: "Blog", path: "/blog" },
+    { name: "Contact", path: "/contact"}
   ];
 
   return (
