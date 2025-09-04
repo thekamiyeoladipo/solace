@@ -5,6 +5,89 @@ import scalability from "../assets/icons/scalability.svg";
 import worldmap from "../assets/worldmap.png";
 import mensmiling from "../assets/mensmiling.png";
 
+
+
+// const JOBS = [
+//   {
+//     id: 1,
+//     title: "WordPress Theme Developer",
+//     salaryMin: 50,
+//     salaryMax: 80,
+//     perks: [
+//       "Customize WordPress themes",
+//       "Ensuring they are responsive",
+//       "SEO-friendly",
+//       "Visually appealing",
+//     ],
+//     link: "#",
+//   },
+//   {
+//     id: 2,
+//     title: "WordPress Theme Developer",
+//     salaryMin: 50,
+//     salaryMax: 80,
+//     perks: [
+//       "Customize WordPress themes",
+//       "Ensuring they are responsive",
+//       "SEO-friendly",
+//       "Visually appealing",
+//     ],
+//     link: "#",
+//   },
+//   {
+//     id: 3,
+//     title: "WordPress Theme Developer",
+//     salaryMin: 50,
+//     salaryMax: 80,
+//     perks: [
+//       "Customize WordPress themes",
+//       "Ensuring they are responsive",
+//       "SEO-friendly",
+//       "Visually appealing",
+//     ],
+//     link: "#",
+//   },
+//   {
+//     id: 4,
+//     title: "WordPress Theme Developer",
+//     salaryMin: 50,
+//     salaryMax: 80,
+//     perks: [
+//       "Customize WordPress themes",
+//       "Ensuring they are responsive",
+//       "SEO-friendly",
+//       "Visually appealing",
+//     ],
+//     link: "#",
+//   },
+//   {
+//     id: 5,
+//     title: "WordPress Theme Developer",
+//     salaryMin: 50,
+//     salaryMax: 80,
+//     perks: [
+//       "Customize WordPress themes",
+//       "Ensuring they are responsive",
+//       "SEO-friendly",
+//       "Visually appealing",
+//     ],
+//     link: "#",
+//   },
+//   {
+//     id: 6,
+//     title: "WordPress Theme Developer",
+//     salaryMin: 50,
+//     salaryMax: 80,
+//     perks: [
+//       "Customize WordPress themes",
+//       "Ensuring they are responsive",
+//       "SEO-friendly",
+//       "Visually appealing",
+//     ],
+//     link: "#",
+//   },
+// ];
+
 const Career = () => {
   return (
     <>
@@ -92,9 +175,145 @@ const Career = () => {
         </div>
       </section>
 
-      <section>
-        
-      </section>
+      <div className="text-center">
+        <p className="text-orange-500 font-medium mb-3">Available Position</p>
+        <h2 className="text-4xl font-extrabold">Join our innovative team</h2>
+      </div>
+
+
+      <section className="py-16 bg-white">
+  <div className="max-w-7xl mx-auto px-6">
+    <div className="flex flex-wrap -mx-4">
+      {[
+        {
+          id: 1,
+          title: "WordPress Theme Developer",
+          salary: "$50K - $80K",
+          type: "Remote",
+          perks: [
+            "Customize WordPress themes",
+            "Ensuring they are responsive",
+            "SEO-friendly",
+            "Visually appealing",
+          ],
+          closing: "2 days later",
+          link: "#",
+        },
+        {
+          id: 2,
+          title: "WordPress Theme Developer",
+          salary: "$50K - $80K",
+          type: "Remote",
+          perks: [
+            "Customize WordPress themes",
+            "Ensuring they are responsive",
+            "SEO-friendly",
+            "Visually appealing",
+          ],
+          closing: "2 days later",
+          link: "#",
+        },
+        {
+          id: 3,
+          title: "WordPress Theme Developer",
+          salary: "$50K - $80K",
+          type: "Remote",
+          perks: [
+            "Customize WordPress themes",
+            "Ensuring they are responsive",
+            "SEO-friendly",
+            "Visually appealing",
+          ],
+          closing: "2 days later",
+          link: "#",
+        },
+        {
+          id: 4,
+          title: "WordPress Theme Developer",
+          salary: "$50K - $80K",
+          type: "Remote",
+          perks: [
+            "Customize WordPress themes",
+            "Ensuring they are responsive",
+            "SEO-friendly",
+            "Visually appealing",
+          ],
+          closing: "2 days later",
+          link: "#",
+        },
+        {
+          id: 5,
+          title: "WordPress Theme Developer",
+          salary: "$50K - $80K",
+          type: "Remote",
+          perks: [
+            "Customize WordPress themes",
+            "Ensuring they are responsive",
+            "SEO-friendly",
+            "Visually appealing",
+          ],
+          closing: "2 days later",
+          link: "#",
+        },
+        {
+          id: 6,
+          title: "WordPress Theme Developer",
+          salary: "$50K - $80K",
+          type: "Remote",
+          perks: [
+            "Customize WordPress themes",
+            "Ensuring they are responsive",
+            "SEO-friendly",
+            "Visually appealing",
+          ],
+          closing: "2 days later",
+          link: "#",
+        },
+      ].map((job) => (
+        <div
+          key={job.id}
+          className="w-full md:w-1/3 px-4 mb-8"
+        >
+          <div className="bg-faintgray rounded-xl shadow-sm p-6 flex flex-col h-full">
+            <span className="w-fit inline-block text-sm px-3 py-1 rounded-md bg-[#F2F2F2] text-gray-700 mb-4">
+              {job.type}
+            </span>
+
+            <h3 className="text-lg font-semibold mb-2">{job.title}</h3>
+            <p className="text-2xl font-bold">{job.salary}</p>
+            <p className="text-gray-600 text-sm mb-4">per year</p>
+
+            <hr className="my-4" />
+
+            <ul className="flex-1 space-y-2 mb-4">
+              {job.perks.map((perk, index) => (
+                <li key={index} className="flex items-center text-gray-700 text-sm">
+                  <span className="mr-2">✔</span>
+                  {perk}
+                </li>
+              ))}
+            </ul>
+
+            <div className="flex items-center justify-between mt-auto">
+              <p className="text-sm text-gray-500">Closed in {job.closing}</p>
+              <a
+                href={job.link}
+                className="bg-green text-white text-sm px-4 py-2 rounded-md hover:bg-green-600 transition"
+              >
+                Apply Job
+              </a>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+
+
+
+      
 
       <section className="py-20 bg-[#FFFAFA]">
         <div className="container mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center gap-12">
