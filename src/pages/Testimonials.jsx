@@ -1,4 +1,5 @@
 import BreadCrumb from "../components/BreadCrumb"
+import testimage from "../assets/testimonial.png"
 
 const Testimonials = () => {
   return (
@@ -20,6 +21,8 @@ const Testimonials = () => {
               using our themes
             </p>
           </div>
+
+
         </div>
       </section>
     </>
