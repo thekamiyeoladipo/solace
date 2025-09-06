@@ -1,6 +1,7 @@
 import BreadCrumb from "../components/BreadCrumb"
 import testimage from "../assets/testimonial.png"
 
+
 const Testimonials = () => {
   return (
     <>
@@ -60,12 +61,6 @@ const Testimonials = () => {
                   alt="Customer testimonial"
                   className="w-full h-auto object-cover"
                 />
-              </div>
-
-              {/* Review Rating card */}
-              <div className="absolute bottom-6 left-6 bg-white shadow-lg rounded-xl px-6 py-4 flex items-center gap-3">
-                <div className="flex text-yellow-400">★★★★★</div>
-                <span className="text-gray-700 font-medium">Review Rating</span>
               </div>
             </div>
           </div>
