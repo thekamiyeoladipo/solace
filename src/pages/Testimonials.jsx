@@ -208,9 +208,56 @@ who’ve seen their ideas come to life with Solace."
         </div>
       </section>
 
-      <section>
-        
-      </section>
+      <section className="bg-black text-white py-20 px-6">
+  <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center md:items-start justify-between gap-10">
+    {/* Left side */}
+    <div className="md:w-1/2 space-y-4">
+      <p className="text-sm text-yellow-500">Share your review</p>
+      <h2 className="text-3xl md:text-4xl font-bold leading-snug">
+        Real experiences with <br /> our WordPress themes
+      </h2>
+      <p className="text-gray-300">
+        Let our community know what you feel and think about our WordPress
+        theme you used
+      </p>
+    </div>
+
+    {/* Right side (form card) */}
+    <div className="bg-white rounded-2xl shadow-md p-8 md:w-1/2">
+      <form className="flex flex-col gap-6">
+        {/* Name + Email */}
+        <div className="flex flex-col md:flex-row gap-4">
+          <input
+            type="text"
+            placeholder="Name"
+            className="w-full border border-gray-300 rounded-md px-3 py-2 text-black"
+          />
+          <input
+            type="email"
+            placeholder="Email"
+            className="w-full border border-gray-300 rounded-md px-3 py-2 text-black"
+          />
+        </div>
+
+        {/* Message */}
+        <textarea
+          placeholder="Message"
+          rows="5"
+          className="w-full border border-gray-300 rounded-md px-3 py-2 text-black"
+        ></textarea>
+
+        {/* Button */}
+        <button
+          type="submit"
+          className="bg-green items-center text-white px-6 py-2 rounded-md self-start hover:bg-green-600 transition"
+        >
+          Subscribe
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
     </>
   );
 };
