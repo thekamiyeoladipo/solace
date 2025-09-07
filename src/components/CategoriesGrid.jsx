@@ -5,54 +5,55 @@ import realestate from "../assets/icons/realestate.svg";
 import technology from "../assets/icons/technology.svg";
 import corporate from "../assets/icons/corporate.svg";
 
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
 const ITEMS = [
-  {
-    icon: ecommerce,
-    title: "E-commerce",
-    description:
-      "Designed to enhance user experience, these templates come with built-in features for easy product management",
-  },
-  {
-    icon: realestate,
-    title: "Real Estate",
-    description:
-      "These designs offer elegant layouts, integrated map views, and powerful search functionality",
-  },
-  {
-    icon: technology,
-    title: "Technology",
-    description:
-      "Perfect for tech companies, startups, and IT services, these templates feature modern designs, interactive elements",
-  },
-  {
-    icon: corporate,
-    title: "Corporate",
-    description:
-      "Designed to enhance user experience, these templates come with built-in features for easy product management",
-  },
-  {
-    icon: events,
-    title: "Events",
-    description:
-      "These designs offer elegant layouts, integrated map views, and powerful search functionality",
-  },
-  {
-    icon: education,
-    title: "Education",
-    description:
-      "Perfect for tech companies, startups, and IT services, these templates feature modern designs, interactive elements",
-  },
+  { icon: ecommerce, title: "E-commerce", description: "Designed to enhance user experience, these templates come with built-in features for easy product management" },
+  { icon: realestate, title: "Real Estate", description: "These designs offer elegant layouts, integrated map views, and powerful search functionality" },
+  { icon: technology, title: "Technology", description: "Perfect for tech companies, startups, and IT services, these templates feature modern designs, interactive elements" },
+  { icon: corporate, title: "Corporate", description: "Designed to enhance user experience, these templates come with built-in features for easy product management" },
+  { icon: events, title: "Events", description: "These designs offer elegant layouts, integrated map views, and powerful search functionality" },
+  { icon: education, title: "Education", description: "Perfect for tech companies, startups, and IT services, these templates feature modern designs, interactive elements" },
 ];
 
 export default function CategoriesGrid() {
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        ".category-card",
+        { opacity: 0, y: 30 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          stagger: 0.2,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top 80%", // fires when top of section hits 80% of viewport
+            toggleActions: "play none none reverse", // play on enter, reverse on leave back
+          },
+        }
+      );
+    }, sectionRef);
+
+    return () => ctx.revert(); // cleanup on unmount
+  }, []);
+
   return (
-    <section className="py-18">
+    <section className="py-18" ref={sectionRef}>
       <div className="container mx-auto px-8">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {ITEMS.map((item) => (
             <article
               key={item.title}
-              className="group cursor-pointer
+              className="category-card group cursor-pointer
                 rounded-2xl p-8 shadow-[0_10px_40px_rgba(0,0,0,0.06)] 
                 bg-white transition-all duration-300 
                 flex flex-col items-center text-center
@@ -67,11 +68,7 @@ export default function CategoriesGrid() {
                   group-hover:bg-white/15
                 "
               >
-                <img
-                  src={item.icon}
-                  alt={item.title}
-                  className="h-7 w-7 transition duration-300 hover:text-white"
-                />
+                <img src={item.icon} alt={item.title} className="h-7 w-7" />
               </div>
 
               {/* Title */}
