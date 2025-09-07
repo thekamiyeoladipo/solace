@@ -8,6 +8,11 @@ import whyy from "../assets/whychooseus.png";
 import cta from "../assets/cta-bg.png";
 import Faq from "../components/Faq";
 
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
+
 const TESTIMONIALS = [
   {
     quote:
@@ -30,6 +35,56 @@ const TESTIMONIALS = [
 ];
 
 const Home = () => {
+  const testimonialSectionRef = useRef(null);
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      ScrollTrigger.matchMedia({
+        // Desktop: pin image + animate testimonials
+        "(min-width: 768px)": function () {
+          gsap.to(".testimonial-image", {
+            scrollTrigger: {
+              trigger: testimonialSectionRef.current,
+              start: "top top",
+              end: "bottom bottom",
+              pin: true,
+              
+            },
+          });
+
+          gsap.utils.toArray(".testimonial").forEach((el) => {
+            gsap.from(el, {
+              opacity: 0,
+              y: 50,
+              scrollTrigger: {
+                trigger: el,
+                start: "top 80%",
+                scrub: true,
+              },
+            });
+          });
+        },
+
+        // Mobile: simple fade-in
+        "(max-width: 767px)": function () {
+          gsap.utils.toArray(".testimonial").forEach((el) => {
+            gsap.from(el, {
+              opacity: 0,
+              y: 30,
+              duration: 0.8,
+              ease: "power3.out",
+              scrollTrigger: {
+                trigger: el,
+                start: "top 85%",
+              },
+            });
+          });
+        },
+      });
+    }, testimonialSectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
     <>
       <Hero />
@@ -42,31 +97,35 @@ const Home = () => {
 ensuring an ideal fit for your project."
       />
       <CategoriesGrid />
-      <section id="" className="bg-black py-20">
+      <section ref={testimonialSectionRef} className="bg-black py-20">
         <div className="container mx-auto px-6">
           <SectionTitle
             eyebrow="Template categories"
             heading="Your perfect template author partner"
             paragraph="Discover the experiences of our satisfied customers 
-who’ve seen their ideas come to life with Solace."
+              who’ve seen their ideas come to life with Solace."
             eyebrowColor="text-green"
             titleColor="text-white"
             paraColor="text-white/70"
           />
+
           <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             {/* Left column: image */}
-            <div className="">
+            <div>
               <img
                 src={why}
                 alt="Testimonial Author"
-                className="rounded-full"
+                className="rounded-full testimonial-image"
               />
             </div>
 
             {/* Right column: testimonials */}
             <div className="space-y-8">
               {TESTIMONIALS.map((item, index) => (
-                <div key={index} className="border-b border-white/20 pb-6">
+                <div
+                  key={index}
+                  className="testimonial border-b border-white/20 pb-6"
+                >
                   <p className="text-white mb-4 text-lg font-medium">
                     “{item.quote}”
                   </p>
