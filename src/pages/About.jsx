@@ -5,44 +5,45 @@ import WhyChoosUs from "../components/WhyChoosUs";
 import SectionTitle from "../components/SectionTitle";
 import CardSection from "../components/CardSection";
 
+
 const About = () => {
   return (
     <>
       <section className="bg-white py-20">
         <div className="container mx-auto px-8 text-center">
-          <div>
+          <div className="px-4 sm:px-6 md:px-8 text-center">
             {/* Page Breadcrumb */}
             <BreadCrumb text="Home / About Us" />
+
             {/* Heading */}
-            <h1 className="text-8xl md:text-5xl font-black text-green mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-green mb-6 leading-tight">
               About Our Company
             </h1>
 
             {/* Paragraph */}
-            <p className="text-sm text-dark/80 font-extrabold max-w-2xl mx-auto">
+            <p className="text-sm sm:text-base md:text-lg text-dark/80 font-medium max-w-2xl mx-auto">
               We value your feedback, questions, and inquiries. Whether you have
               a project in mind, need assistance with our services, or simply
               want to say hello, we’re here to assist you.
             </p>
           </div>
 
-          <div className="m-40 grid grid-cols-1 md:grid-cols-12 items-center gap-12">
+          <div className="mx-6 my-20 md:mx-20 md:my-40 flex flex-col md:flex-row items-center gap-12">
             {/* Left column - Image */}
-            <div className="md:col-span-3 flex justify-center">
-              <div className="">
-                <img
-                  src={HeroImg}
-                  alt="Team member"
-                  className="w-full h-full object-cover"
-                />
-              </div>
+            <div className="flex justify-center md:w-1/4">
+              <img
+                src={HeroImg}
+                alt="Team member"
+                className="w-40 h-40 md:w-full md:h-full object-cover rounded-full md:rounded-none"
+              />
             </div>
 
             {/* Middle column - Content */}
-            <div className="md:col-span-6 text-center md:text-left">
+            <div className="text-center md:text-left md:w-2/4">
               <p className="text-lightorange font-semibold mb-3">Who Are We</p>
-              <h2 className="text-3xl md:text-4xl font-extrabold text-dark leading-tight mb-6">
-                Pioneers in WP Theme <br /> creation in US
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-dark leading-tight mb-6">
+                Pioneers in WP Theme <br className="hidden sm:block" /> creation
+                in US
               </h2>
               <p className="text-dark/80 mb-4">
                 We’re not just a company; we’re a dedicated team of creators,
@@ -58,7 +59,7 @@ const About = () => {
             </div>
 
             {/* Right column - Categories */}
-            <div className="md:col-span-3 flex flex-col gap-4">
+            <div className="flex flex-wrap md:flex-col gap-4 md:w-1/4 justify-center">
               {[
                 "Corporate",
                 "E-commerce",
@@ -69,13 +70,14 @@ const About = () => {
               ].map((category) => (
                 <button
                   key={category}
-                  className="bg-green text-white px-6 py-3 rounded-lg font-semibold transition-colors hover:bg-darkgreen"
+                  className="bg-green text-white px-5 py-2 sm:px-6 sm:py-3 rounded-lg font-semibold transition-colors hover:bg-darkgreen"
                 >
                   {category}
                 </button>
               ))}
             </div>
           </div>
+
         </div>
       </section>
 
@@ -137,12 +139,7 @@ const About = () => {
         paragraph="Whether you seek inspiration for your own projects or simply appreciate the art of 3D 
 printing, this showcase is a window into the world of Printifix’s latest achievements."
       />
-     <CardSection />
-
-
-
-
-
+      <CardSection />
     </>
   );
 };
