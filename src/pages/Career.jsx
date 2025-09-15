@@ -300,7 +300,7 @@ const Career = () => {
                 href={job.link}
                 className="bg-green text-white text-sm px-4 py-2 rounded-md hover:bg-green-600 transition"
               >
-                Apply Job
+                Apply
               </a>
             </div>
           </div>
