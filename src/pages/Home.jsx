@@ -47,7 +47,6 @@ const Home = () => {
               start: "top top",
               end: "bottom bottom",
               pin: true,
-              
             },
           });
 
